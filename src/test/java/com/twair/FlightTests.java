@@ -109,6 +109,13 @@ public class FlightTests {
     }
 
     @Test
+    public void shouldReturnFareForOneSeatIfNoOfSeatsIsZeroOfThatClass() throws Exception {
+        int NoOfSeats =0;
+        Flight flight = new Flight("F001", source, dest, plane, departure, arrival, travelClasses);
+        Assert.assertEquals(1000.0,flight.getTotalFare(ClassType.ECONOMY, NoOfSeats),0.01);
+    }
+
+    @Test
     public void shouldReturnFalseIfThereAreNoSeatsOfThatClass() throws Exception {
         Flight flight = new Flight("F001", source, dest, plane, departure, arrival, travelClasses);
         Assert.assertFalse(flight.hasClass(ClassType.BUSINESS));

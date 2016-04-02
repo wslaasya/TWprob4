@@ -32,6 +32,9 @@ public class TravelClass {
     }
 
     public double getCostForSeats(Integer numberOfSeats) {
+        if(numberOfSeats == 0) {
+            numberOfSeats = 1;
+        }
         return numberOfSeats*this.basePrice;
     }
 }
